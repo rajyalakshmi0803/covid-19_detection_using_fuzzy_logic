@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="animated-title">COVID-19 Detection</h1>
+            <p class="animated-subtitle">Upload a chest X-ray image to determine if the patient is COVID-19 positive.</p>
+        </div>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='pulmoscan-removebg-preview.png') }}" alt="Logo" class="logo">
+        </div>
+    </header>
+    <main>
+        <div class="upload-section">
+            <form method="POST" enctype="multipart/form-data">
+                <label for="file-upload" class="custom-file-upload animated-button">Choose File</label>
+                <input id="file-upload" type="file" name="file" required>
+                <button type="submit" class="submit-button animated-button">Analyze Image</button>
+            </form>
+        </div>
+
+        {% if prediction %}
+        <div class="result-section">
+            <h2 class="animated-title">Prediction Result</h2>
+            <p class="result-message">
+                The image is classified as: <strong>{{ prediction }}</strong>
+            </p>
+            <img src="{{ url_for('static', filename=image) }}" alt="Uploaded Image" class="result-image">
+        </div>
+        {% endif %}
+    </main>
+    <footer>
+        <p>Developed as part of the COVID-19 Detection Project</p>
+    </footer>
+</body>
+</html>
+
