@@ -1,0 +1,179 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom right, #1f4037, #99f2c8);
+    color: #fff;
+    overflow-x: hidden;
+    animation: backgroundAnimation 10s infinite alternate ease-in-out;
+}
+
+@keyframes backgroundAnimation {
+    0% { background: linear-gradient(to bottom right, #1f4037, #99f2c8); }
+    50% { background: linear-gradient(to bottom right, #283048, #859398); }
+    100% { background: linear-gradient(to bottom right, #134e5e, #71b280); }
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s ease-in-out;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: #ffcc29;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    animation: slideIn 1.5s ease-in-out;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 3rem;
+    color: #fff;
+    animation: fadeIn 2s ease-in-out 0.5s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Upload Section */
+.upload-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    margin: 2rem auto;
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
+
+.upload-section:hover {
+    transform: scale(1);
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 12px 25px;
+    cursor: pointer;
+    background-color: #ffcc29;
+    color: #1f4037;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.custom-file-upload:hover {
+    background-color: #1f4037;
+    color: #ffcc29;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 15px;
+    background: #134e5e;
+    color: #ffcc29;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #ffcc29;
+    color: #134e5e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Result Section */
+.result-section {
+    margin: 2rem auto; /* Center the section horizontally */
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 90%; /* Use 90% of the viewport width */
+    max-width: 600px; /* Set a max-width for larger screens */
+    animation: fadeIn 2s ease-in-out;
+    display: flex; /* Use flexbox to center content */
+    flex-direction: column; /* Align children in a column */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+}
+
+.result-section h2 {
+    color: #ffcc29;
+    font-size: 2rem;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+.result-message {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.result-image {
+    max-width: 100%;
+    border: 5px solid #ffcc29;
+    border-radius: 10px;
+    margin-top: 1rem;
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
+
+.result-image:hover {
+    transform: scale(1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    margin-top: 2rem;
+    color: #fff;
+}
+
+.logo {
+    position: absolute; /* Use absolute positioning */
+    top: 0.05px; /* Adjust distance from the top */
+    left: 110px; /* Adjust distance from the left */
+    max-width: 400px; /* Set a maximum width for the logo */
+    height: 250px; /* Maintain aspect ratio */
+    margin-bottom: 10rem; /* Add some space below the logo */
+    z-index: 10; /* Ensure the logo appears above other content */
+}
+
